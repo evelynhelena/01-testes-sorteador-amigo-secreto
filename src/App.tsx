@@ -4,6 +4,7 @@ import './global.scss'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import { NotFound } from './pages/not-found';
+import 'remixicon/fonts/remixicon.css'
 
 
 function App() {

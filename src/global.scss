@@ -1,5 +1,6 @@
 @use "./theme.scss" as *;
 
+// bg-color
 .bg-color-primary{
     background-color: $primary;
 }
@@ -11,4 +12,22 @@
 }
 .bg-color-gray{
     background-color: $gray;
+}
+
+// Font-color
+
+.color-font-primary{
+    color:  $primary;
+}
+.color-font-secondary{
+    color:  $secondary;
+}
+.color-font-tertiary{
+    color:  $tertiary;
+}
+.color-font-gray{
+    color:  $gray;
+}
+.color-font-gray-opacity{
+    color:  $gray-opacity;
 }
