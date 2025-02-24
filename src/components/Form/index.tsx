@@ -1,12 +1,16 @@
 import { useRef, useState } from "react"
 import { useAddParticipant } from "../../hook/useAddParticipant";
 import { useMessageError } from "../../hook/useMessageError";
+import { LANGUAGE } from "../../pt-br";
+import { ParticipantList } from "../ParticipantList/ParticipantList";
+import { useParticipantList } from "../../hook/useParticipantList";
 
 export function Form() {
     const [particpantName, setParticpantName] = useState<string>('');
     const inputRef = useRef<HTMLInputElement>(null);
     const addParticipantList = useAddParticipant();
     const errorMessage = useMessageError();
+    const list = useParticipantList();
 
     const addParticipants = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -25,17 +29,24 @@ export function Form() {
                 <input
                     className="border-b-5 border-2 w-full p-[20px] rounded-l-[37px] pl-[50px] text-base"
                     ref={inputRef}
-                    placeholder="Insira os nomes dos participantes"
+                    placeholder={LANGUAGE.FORM.PLACEHOLDER}
                     value={particpantName}
                     type="text"
                     onChange={({ target }) => setParticpantName(target.value)} />
                 <button
-                    className={`${!particpantName && 'cursor-not-allowed bg-color-gray text-black'} text-white bg-color-secondary cursor-pointer p-[20px] rounded-r-[37px] border-b-5 border-2 w-[255px] text-base border-black`}
+                    className={`${!particpantName ? 'cursor-not-allowed bg-color-gray text-black' : 'cursor-pointer'} text-white bg-color-secondary p-[20px] rounded-r-[37px] border-b-5 border-2 w-[255px] text-base border-black`}
                     aria-label="button-adding"
-                    disabled={!particpantName}>Adicionar
+                    disabled={!particpantName}>
+                    {LANGUAGE.FORM.BUTTON_ADD}
                 </button>
                 {errorMessage && <p role='alert'>{errorMessage}</p>}
             </form>
+
+            {
+                list && (
+                    <ParticipantList/>
+                )
+            }
         </div>
     )
 }

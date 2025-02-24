@@ -5,11 +5,11 @@ export function Header() {
 
     return (
         <header className="bg-color-primary pt-[123px] flex justify-center  h-[454px]">
-            <img src={Logo} alt={LANGUAGE.ALT_IMG_LOGO} className='max-w-[450px]' />
+            <img src={Logo} alt={LANGUAGE.HEADER.ALT_IMG_LOGO} className='max-w-[450px]' />
             <img
                 className='mt-20 max-w-[450px]'
                 src={Woman}
-                alt={LANGUAGE.ALT_IMG_WOMAN}
+                alt={LANGUAGE.HEADER.ALT_IMG_WOMAN}
             />
         </header>
     )
