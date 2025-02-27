@@ -20,7 +20,7 @@ export function Form() {
     }
 
     return (
-        <div className="w-full flex justify-center flex-col items-center gap-8">
+        <div className="w-full flex justify-center flex-col items-center gap-8 relative">
             <p className="text-3xl color-font-primary font-semibold">Vamos começar!</p>
             <form onSubmit={addParticipants} className="w-full max-w-[500px] flex relative items-center">
                 <div className="absolute left-[20px]">
@@ -41,6 +41,9 @@ export function Form() {
                 </button>
                 {errorMessage && <p role='alert'>{errorMessage}</p>}
             </form>
+            {/*<div className="absolute top-0">
+                erro
+            </div>*/}
 
             {
                 list && (

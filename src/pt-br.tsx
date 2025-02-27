@@ -6,5 +6,8 @@ export const LANGUAGE ={
     FORM:{
         PLACEHOLDER: "Insira os nomes dos participantes",
         BUTTON_ADD: "Adicionar",
+    },
+    HOME:{
+        BTN_START_GAME: 'Iniciar brincadeira!'
     }
 }

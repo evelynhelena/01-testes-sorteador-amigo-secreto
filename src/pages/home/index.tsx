@@ -1,6 +1,6 @@
 import { Form } from "../../components/Form";
 import { Header } from "../../components/Header";
-import Bag from "../../assets/bag.svg"
+import { Footer } from "../../components/Footer";
 
 export function Home() {
     return (
@@ -21,13 +21,7 @@ export function Home() {
                 "
             >
                 <Form />
-
-                <div className="flex w-full max-w-[500px] justify-between gap-[] items-center">
-                    <button className="bg-color-secondary w-full max-w-[250px] h-[70px] rounded-[37px]">
-                        <span>Iniciar brincadeira!</span>
-                    </button>
-                    <img src={Bag} className="w-full max-w-[200px]" />
-                </div>
+                <Footer />
             </div>
 
         </div>
