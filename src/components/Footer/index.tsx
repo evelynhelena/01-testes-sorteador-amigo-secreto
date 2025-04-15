@@ -1,15 +1,22 @@
 import { LANGUAGE } from "../../pt-br";
 import Bag from "../../assets/bag.svg"
 import { useParticipantList } from "../../hook/useParticipantList";
+import { useNavigate } from "react-router-dom";
 
 export function Footer() {
     const participantList = useParticipantList();
     const isDisabled = participantList.length < 3;
+    const navigate = useNavigate();
+
+    const startGame = () => {
+        navigate('/start-game')
+    }
 
     return (
         <div className="flex w-full max-w-[500px] justify-between items-center">
             <button 
             disabled={isDisabled}
+            onClick={startGame}
             className={`
                 bg-color-secondary w-full max-w-[250px] h-[70px] rounded-[37px] 
                 border-b-5 border-2 text-white 

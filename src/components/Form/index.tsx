@@ -16,7 +16,7 @@ export function Form() {
         event.preventDefault();
         addParticipantList(particpantName);
         setParticpantName('');
-        inputRef.current?.focus()
+        inputRef.current?.focus();
     }
 
     return (
@@ -39,15 +39,19 @@ export function Form() {
                     disabled={!particpantName}>
                     {LANGUAGE.FORM.BUTTON_ADD}
                 </button>
-                {errorMessage && <p role='alert'>{errorMessage}</p>}
             </form>
+            {errorMessage &&
+                <div className="bg-red-400 p-3 rounded-md text-white">
+                    <p role='alert'>{errorMessage}</p>
+                </div>
+            }
             {/*<div className="absolute top-0">
                 erro
             </div>*/}
 
             {
                 list && (
-                    <ParticipantList/>
+                    <ParticipantList />
                 )
             }
         </div>
